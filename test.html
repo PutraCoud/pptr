@@ -109,4 +109,146 @@
         <img src="https://lh3.googleusercontent.com/pw/AP1GczM5SHYh5k9xiYSqz73VIJxyQ6AILa2gBHpBF5j_X2BSwtgoKV1K1LSSsg6rDK_VWT6GgZ0oM1YcVpm8-3POHpAQcOstkyocllYzjZEZbx9Hw-a2vCG2=w1920-h1080" alt="Foto 4">
         <img src="https://lh3.googleusercontent.com/pw/AP1GczOvRNwqrqS_Xgq6VDf6xuQj189xq370ANMnxUHZCdL64DLjtGRmgUoUtdvYsMMTat7MPh2KqcLLPd_rgkh4xnkH-a7jJPYNizFQfXbgBiwNNfBUCi-W=w1920-h1080" alt="Foto 4">
         <img src="https://lh3.googleusercontent.com/pw/AP1GczPfliCJLiDxHikdI1YzM-NcMGKHlRyQchRVOSshYtzCDQ_C-B8z0SxX7jb_TtxfeMVQPfb_c3HWgJn34txKVAxQm-hVt6lSC7ks93pWYopTsAlWAcSI=w1920-h1080" alt="Foto 4">
-   
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczM3r2F72NJNZqvyPQjs3UDI3USvCpM44ZUBlTWz_9RFg-exp1F1MYsbi8BCJP2FiWDv6DgeQQowAcKmvLGseepy1F3D_PbAb5_Uv_etKsFfloq3y-gj=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMsQvH9OsTJJ9kJQ6xHnxFgJUBY22NKFy1DVlTjr94CLIHvZQ2qRcXt_wULTdqSiLGFFB2GNGbT6ZQ2_FsVfsv9L5moEzDirCFDq7w8McudP00sXFQ8=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczN948K2u0n81utSQ9v1y4-RFmpjfSPHZfQS-YmDVMSsKLomM3qwEvf2KPwTzcdIofIlBNWb4AZ55JreDrXeNRFS8XH4Imx7ozuNPQVXfKp4hIc0a0Kx=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczN6HvGz1HakZT8WQkwE0UhXpFn6blCuJb9vLhYpgCm592xBFwWp1TKQwWV_JOXgcJ8P1RZkryUyGNQAhyk3YhqQbkE1MnNijR9bDhomxYtbbuj-sTd-=w1920-h1080" alt="Foto 4">
+        <!-- Tambahkan lebih banyak sesuai kebutuhan -->
+    </div>
+    <!-- Overlay gradien -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Konten utama -->
+    <div class="content" id="content">
+        <h1>Selamat Ulang Tahun, Pacarku Tercinta!</h1>
+        
+        <!-- Background Music dari YouTube -->
+        <div style="position: relative; width: 100px; height: 100px; margin: 0 auto;">
+            <iframe id="ytPlayer" class="BLOG_video_class" allowfullscreen="" youtube-src-id="JubGFVWadc8" width="0" height="0" src="https://www.youtube.com/embed/JubGFVWadc8?autoplay=0" allow="autoplay; encrypted-media"></iframe>
+            <button id="playButton" onclick="playVideo()">▶</button>
+        </div>
+
+        <p>Koleksi foto kita menghiasi kenangan indah ini!</p>
+        <p>Klik tombol di bawah untuk membaca pesan ulang tahun spesial!</p>
+        <button id="openMessage" onclick="openMessage()">🍓 Ketuk untuk Baca Pesan</button>
+        <div id="message" class="message-hidden">
+            <p>Selamat ulang tahun, sayangku! Dari pertama kali kita bertemu, setiap momen bersamamu adalah kebahagiaan terbesar dalam hidupku. Semoga tahun ini penuh dengan cinta, tawa, dan petualangan baru bersama. Aku mencintaimu selamanya! 💕</p>
+            <button onclick="closeMessage()" class="close-button">🍓 Tutup</button>
+        </div>
+    </div>
+
+    <!-- Tombol kembali -->
+    <button id="backButton" onclick="showContent()">🍓 Kembali</button>
+
+    <script>
+        // Fungsi untuk play video
+        function playVideo() {
+            const player = document.getElementById('ytPlayer');
+            const playButton = document.getElementById('playButton');
+            player.src = player.src.replace('autoplay=0', 'autoplay=1&mute=0');
+            playButton.style.display = 'none'; // Sembunyikan tombol secara permanen
+        }
+
+        // Fungsi untuk membuka pesan
+        function openMessage() {
+            const message = document.getElementById('message');
+            message.classList.remove('message-hidden');
+            message.classList.add('message-visible');
+            document.getElementById('openMessage').style.display = 'none';
+            // Animasi stroberi saat pesan dibuka
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    particle.innerHTML = '🍓';
+                    particle.style.color = '#FF4C4C';
+                    particle.style.left = (50 + Math.random() * 20 - 10) + '%';
+                    particle.style.top = '50%';
+                    particle.style.animation = 'float 1s ease-in-out';
+                    document.body.appendChild(particle);
+                    setTimeout(() => particle.remove(), 1000);
+                }, i * 200);
+            }
+        }
+
+        // Fungsi untuk menutup pesan
+        function closeMessage() {
+            const message = document.getElementById('message');
+            message.classList.remove('message-visible');
+            message.classList.add('message-hidden');
+            document.getElementById('openMessage').style.display = 'block';
+        }
+
+        // Auto-scroll kolase background
+        const collage = document.getElementById('collage');
+        let scrollInterval;
+        function autoScroll() {
+            if (collage.scrollTop + collage.clientHeight >= collage.scrollHeight) {
+                collage.scrollTop = 0;
+            } else {
+                collage.scrollTop += 1;
+            }
+        }
+
+        // Mulai auto-scroll
+        scrollInterval = setInterval(autoScroll, 30);
+
+        // Hentikan auto-scroll saat hover
+        collage.addEventListener('mouseenter', () => {
+            clearInterval(scrollInterval);
+        });
+
+        // Lanjutkan auto-scroll saat mouse keluar
+        collage.addEventListener('mouseleave', () => {
+            scrollInterval = setInterval(autoScroll, 30);
+        });
+
+        // Fungsi untuk menampilkan full background saat klik gambar
+        const images = document.querySelectorAll('.background-collage img');
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                const content = document.getElementById('content');
+                const overlay = document.getElementById('overlay');
+                content.style.opacity = '0';
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    content.style.display = 'none';
+                    overlay.style.display = 'none';
+                    document.getElementById('backButton').style.display = 'block';
+                }, 500);
+                clearInterval(scrollInterval);
+            });
+        });
+
+        // Fungsi untuk kembali ke tampilan awal
+        function showContent() {
+            const content = document.getElementById('content');
+            const overlay = document.getElementById('overlay');
+            content.style.display = 'block';
+            overlay.style.display = 'block';
+            setTimeout(() => {
+                content.style.opacity = '1';
+                overlay.style.opacity = '1';
+            }, 10);
+            document.getElementById('backButton').style.display = 'none';
+            scrollInterval = setInterval(autoScroll, 30);
+        }
+
+        // Partikel stroberi dan kilauan
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const isStrawberry = Math.random() > 0.5;
+            particle.innerHTML = isStrawberry ? '🍓' : '✨';
+            particle.style.color = isStrawberry ? '#FF4C4C' : '#FFD700';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(particle);
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+        setInterval(createParticle, 1500); // Partikel setiap 1.5 detik
+    </script>
+</body>
+</html>
