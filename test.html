@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Sayangku!</title>
+    <style>
+        body {
+            background-color: #FFC0CB; /* Pink lembut */
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #FF69B4; /* Hot pink */
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .gallery img {
+            width: 200px;
+            height: auto;
+            border: 2px solid #FFB6C1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #message {
+            display: none;
+            background-color: #FFDDE1;
+            padding: 20px;
+            border: 2px solid #FF69B4;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 80%;
+            font-size: 18px;
+            color: #333;
+        }
+        button {
+            background-color: #FF69B4;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #FF1493;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat Ulang Tahun, Pacarku Tercinta!</h1>
+    
+    <!-- Background Music dari Google Drive MP3: Ganti FILE_ID dengan ID file MP3 kalian. Coba autoplay, tapi kalau diblokir, pakai tombol play manual. -->
+    <audio id="bgMusic" loop style="display: none;">
+        <source src="https://drive.google.com/uc?export=download&id=1RZ_jqoaDxuWhi1p-_DpxVY1MzN8EpqQD&confirm=t" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+    </audio>
+    <button onclick="playMusic()">Play Music</button> <!-- Tombol manual untuk mulai music kalau autoplay gagal -->
+
+    <p>Koleksi foto kita dari awal bertemu. Klik foto untuk memperbesar (opsional).</p>
+    <div class="gallery">
+        <!-- Ganti src dengan direct link Google Drive: https://drive.google.com/uc?export=view&id=FILE_ID (tambah &confirm=t kalau gambar nggak muncul) -->
+        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_1" alt="Foto 1">
+        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_2" alt="Foto 2">
+        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_3" alt="Foto 3">
+        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_4" alt="Foto 4">
+        <!-- Tambahkan lebih banyak sesuai kebutuhan -->
+    </div>
+
+    <p>Klik tombol di bawah ini untuk membaca pesan ulang tahun spesial!</p>
+    <button onclick="revealMessage()">Ketuk untuk Baca Pesan</button>
+    <div id="message">
+        <p>Selamat ulang tahun, sayangku! Dari pertama kali kita bertemu, setiap momen bersamamu adalah kebahagiaan terbesar dalam hidupku. Semoga tahun ini penuh dengan cinta, tawa, dan petualangan baru bersama. Aku mencintaimu selamanya! 💕</p>
+        <!-- Ganti teks pesan ini dengan kata-kata ucapanmu sendiri -->
+    </div>
+
+    <script>
+        // Fungsi untuk reveal pesan
+        function revealMessage() {
+            document.getElementById('message').style.display = 'block';
+            this.style.display = 'none'; // Sembunyikan tombol setelah diklik
+        }
+
+        // Fungsi untuk play music manual (dan coba autoplay on load)
+        const audio = document.getElementById('bgMusic');
+        audio.play().catch(error => console.log('Autoplay diblokir: ' + error)); // Coba autoplay, log error kalau gagal
+
+        function playMusic() {
+            audio.play();
+        }
+    </script>
+</body>
+</html>
