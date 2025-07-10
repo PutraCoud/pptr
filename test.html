@@ -4,100 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Ulang Tahun, Sayangku!</title>
-    <style>
-        body {
-            background-color: #FFC0CB; /* Pink lembut */
-            font-family: Arial, sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            color: #FF69B4; /* Hot pink */
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-        .gallery img {
-            width: 200px;
-            height: auto;
-            border: 2px solid #FFB6C1;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        #message {
-            display: none;
-            background-color: #FFDDE1;
-            padding: 20px;
-            border: 2px solid #FF69B4;
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 80%;
-            font-size: 18px;
-            color: #333;
-        }
-        button {
-            background-color: #FF69B4;
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin: 10px;
-        }
-        button:hover {
-            background-color: #FF1493;
-        }
-    </style>
+    <!-- Google Fonts: Quicksand dan Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <!-- Link ke CSS eksternal -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Selamat Ulang Tahun, Pacarku Tercinta!</h1>
-    
-    <!-- Background Music dari Google Drive MP3: Ganti FILE_ID dengan ID file MP3 kalian. Coba autoplay, tapi kalau diblokir, pakai tombol play manual. -->
-    <audio id="bgMusic" loop style="display: none;">
-        <source src="https://drive.google.com/uc?export=download&id=1RZ_jqoaDxuWhi1p-_DpxVY1MzN8EpqQD&confirm=t" type="audio/mpeg">
-        Browser Anda tidak mendukung audio.
-    </audio>
-    <button onclick="playMusic()">Play Music</button> <!-- Tombol manual untuk mulai music kalau autoplay gagal -->
-
-    <p>Koleksi foto kita dari awal bertemu. Klik foto untuk memperbesar (opsional).</p>
-    <div class="gallery">
-        <!-- Ganti src dengan direct link Google Drive: https://drive.google.com/uc?export=view&id=FILE_ID (tambah &confirm=t kalau gambar nggak muncul) -->
-        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_1" alt="Foto 1">
-        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_2" alt="Foto 2">
-        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_3" alt="Foto 3">
-        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_4" alt="Foto 4">
-        <!-- Tambahkan lebih banyak sesuai kebutuhan -->
-    </div>
-
-    <p>Klik tombol di bawah ini untuk membaca pesan ulang tahun spesial!</p>
-    <button onclick="revealMessage()">Ketuk untuk Baca Pesan</button>
-    <div id="message">
-        <p>Selamat ulang tahun, sayangku! Dari pertama kali kita bertemu, setiap momen bersamamu adalah kebahagiaan terbesar dalam hidupku. Semoga tahun ini penuh dengan cinta, tawa, dan petualangan baru bersama. Aku mencintaimu selamanya! 💕</p>
-        <!-- Ganti teks pesan ini dengan kata-kata ucapanmu sendiri -->
-    </div>
-
-    <script>
-        // Fungsi untuk reveal pesan
-        function revealMessage() {
-            document.getElementById('message').style.display = 'block';
-            this.style.display = 'none'; // Sembunyikan tombol setelah diklik
-        }
-
-        // Fungsi untuk play music manual (dan coba autoplay on load)
-        const audio = document.getElementById('bgMusic');
-        audio.play().catch(error => console.log('Autoplay diblokir: ' + error)); // Coba autoplay, log error kalau gagal
-
-        function playMusic() {
-            audio.play();
-        }
-    </script>
-</body>
-</html>
+    <!-- Background kolase -->
+    <div class="background-collage" id="collage">
+        <!-- Ganti src dengan URL dari Google Photos -->
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPkoq60ZAlizWvIfFQSE-IeDOrvjdPR-hppup6vX8bsYvOPH8ZXgdLYEevvSHfjpwpwcsa-vcauIg0WFV7EGqqm4Z-a9R842Jwi0IU0Jbl0jZUh8gu_" alt="Foto 1">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMIvJF8yhfLLSDhHIGBzmBWBY_pn59cSpVBMko7ul-r0nthldUT1QWIxDK4fW1t_oHej5ZxDcOxCiftu_3eDaNml90epc_ZwRtm4XyzIlRnrCSUB5iM=w1920-h1080" alt="Foto 2">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMSJa8-9Xw40ce9T28rJjDts7W4TKuvEIyZBxPINORQHpIPi5PKLec7_b-fGqCdqxS7IjYnPU2efIjKpDPtBiodAPRX0ygAsm6LYNuetB_KcDlZEZ--=w1920-h1080" alt="Foto 3">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczM_W756X8EEAOZTBWYrFRFo6ixv4DGY05uiX2h_76M79LixbDoZcLO1ozOlO34-8PEJYgOepfh5tstr8HXoBKZGEEw1vkxNN8GGcUfbsKLzKWyONA10=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNAxjQFmYZR1frdA_QdDDXSJN4FJuaFvJkIa8R93ZzCw09l4G5vI1evE-97JL_EHkw7ZU7ZJnRKamcc3ERf90ybqpeOcYEtx_e4_FzIMFwh9Wop5xov=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczM0b1MFonvpFiCk1RX1C9X-HcF7xiiUtHPvhSH81UewWMBdSMD5OANhMmCO94aRyJTAF3TzW464LEogggFu_xlYhtzSSkC4trl7nJjuoRd95jAvkP1L=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMOY2EkWE29ptLem7i8fyoi6GGVPWyfd7clOx0XdgkvBXMyIl8RN1s3j5vXq4acC61ztN_yvGfzHcHi-EhwDN1FIGN1bUFb0omgmmjPhea96-31bn70=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMOY2EkWE29ptLem7i8fyoi6GGVPWyfd7clOx0XdgkvBXMyIl8RN1s3j5vXq4acC61ztN_yvGfzHcHi-EhwDN1FIGN1bUFb0omgmmjPhea96-31bn70=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMB96JGMMXs5vx4Y7zFr822PegvW0A7gLDdpgpkBQ3cMVM88XX7F6pePlIB-W-c4f6X3Vw1aUUmtMNiP3mWWLkEHzdV5ZljRmCL0e8tGcn2UX8fxYmW=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNR6-vt6TSSlvoKr-fv7VMH01MyF3dBeWe3KFLYqyO8UKwJ56ZnTRTVzyEAmCh_aMy3zai6O8vlDjITE4UnxbUbv2qP0JXJM-1V-L79SjBgcWBNcm0a=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPfpbjoXb08Mw35iyUwMwyNYePg2k7aE8pqAHGvQDlV_O6aUTTIcbk2rhMk_0KYtTi__dm1lqf65JJb1rVpkxf2pMdaC3x6pzKPpUTh9IQ8CEs_vqnw=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPZcQ84DsaWWv8qzDpyAWcZzpUw-TO8UVLzwqo7py7e497h5Kl_sEpP4IzTMvOFKFeYWGZuvyy8O8MbDV1Ie7jwG3uxvjbPPD77OgHPRH27ZmNiPjig=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczO_XWASxWqjJkCubiQBukiaAWLxShxs01AS0W-oxJTe4dZrpehWre8OUD2-xEe9dRxmBY_ianSzA4HjPn8bSK7_LyIQOsOXUoibIN-_VeUw_-ZoOLyo=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPljPm3Ogbi0VA3G9A308HPwacu-cSByf267buylC4IO0V_6Clqwi5sYXi_l5sqVsT5Frk0Vevw1scgPT3Gs-SIaA6HmuQ1GRbTrbZ6DLwRXShQ9Fy1=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczO59Der5tda7KD6ZyLfx-XGG06iqBBhGaEVb1RY-1qSN6nNYUC2kNTo2yoKFprOV1qDet4cpYFDuzRQJrPxrzdgei0YlAjYf_Vob1SwMrY0wqiJk2Vc=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczM_Bj9idzuxAxeK1N-hZt11C3DfGiDtxVS2TZ871Qp6XVKd5_2HNDpX27b6vtT4btzLjm6spr3oLaL77Wt1S435_Q6_VfAbW0NxUG4lKFuy1PTYfixA=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczO8m4Xprmqdeuremw6Zbc3DhDnqsUaj0vIBkUkVBC6Bn2x9-h1080QZq6wzNw5ymjbcmYa_aTK2kc7wxrSwSVnvm2X495dXS7o56Nj8_cfO5-dWtumxHS-=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMDowBSU-NLHilbK46FbgUDOAVBmcM8ynyrvK6mlJhIZ9lY-HeEDXQCgb5LEO66rqedFhUcqO-0ZYr5kfIVegp-FI07XxQeOkmrtyPWTiObF_85JH0r=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNC8qCZClCMnzzdf4AOnT0ViEIkBhs1shA0KE7nQ4r--6zijVpBtfKPiYWwiDsW-HOEp7VCeS1qyT8_SINVyR_qy5LYOe_210GRg_lUX66kcf097cOi=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOsSbjqMNf3X0Z-Q51NQvyZSWAEwyu-F_-FM9uiYVoqFWQqDiZhIidMY_ZZetk5ywKtv0XEgIllLEisfgb1lvOAzX2IYl53MUgbR-wlr2VxHgb8-0pl=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMBNCuVf9JR8G4X6oZvLkWjuc3Mh33s9UfyLM4xUcHVcPbpjQ8003i5IwPOd1BoQGvwNN5q5QYkonYRT-Q16QtBPsx9aCvBlvGRIahko1ekERIABL1o=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNMoilUYGRD7-DOoHwh67HH0pMPeSlq9JPmA1BA-bwtX9l9r2wsg6DhlqxDSTiMRusu3sL3_8stKdvtqotIOdwA1pvTF0yY2vbbAWsVgmpW134GWAMF=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNmIy4g0zWwO_s8fmkyNLI1Kx6w0rO21ydp5_oA36w3Kq7LWFXEWKlBqhZYvs9TUdZzHG5iRaZ2Rt0BYfP3EZh1wlHBX5usT0fkaAuZkIo_QzVxIBCJ=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczN44c7E7FmRnf0Ou7kHQShwBipfgoVUwgHGtxAwppJe-OSPEGcMExPCI5hkaL_SGcGuEqO1o8Ec1dtxEc9f_Yyq5pF2iDL3fU3qREuJYDSbtHXtWXSb=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPWTXfkvck-fpKAmRmFt5CPagdocojXJKPOIk-nXHI8lRLTamnE4k-KcWNMt2lkrLKfWOxKInpc03IuC7XGuUYNKuq169V-yj6e6G0DEtR2zfQ7ci9C=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOsXycW3AoOksVxWtORpJMIn5z0ldAUKaBBEaXdQDusJ-irdEVJpXaKSB8gZP_EeUxMLxcwBJ8WyqJvqOCezvizHrRgGf0AF0550u_8DWVOpS2AbPRZ=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMcmO7d0gJKGUr2J66m18BlSYNUe4WXYz_n225uRGDnfI1dzAdRNJNATeeqWT9Xcg4cnUwNDblNhCyH_zyFnOkK4tKa66YqWvfL5hzdY0O7eiiPynVo=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOSEyHxU5qK45Nc5oQuXrfYUo2opfP38eEQCEUx7AvPYs5ZRH7Wfotr7JOj5EWuCcNloo1uPuoygeItyXIZqNSSw43qHvMrlFCg1g7mKYu0K982GODg=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOZB5KHWTFevTo2qgjvnoCUwFqxPYbg2beVIxJ5pVgACHpq8JM74Uh9FUr2TcJ-BRefyQLNkiIENkXlg32rnkk9TvR_3EVoEGrtV6t-GlJJebfdEZD2=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMmdyMF49zs5WnJUTgRgEjLDgseDKr-AefpJ1U1gb3MjRAPP4jmgXb5TCXjocv0105MbyWu5COX9FDD6NLtLOvT6PJ70c-KB9jrklk9yHsk6VxVr4EL=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMas-C4gmTn0-5POcLXCPsqQji-T4mYcuq4zmlxAayQa-nkT5FFKnwY1y7p3HKSWx8CBygCu7QqY_FypHYm54SBOO8NkejAT_vwECVyn829VO6kzLrU=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNT4hyWkJbXWVHR8AuV68x7yIF0qgSlYX-dj6AL0wg01_S1b1XInoKasXNAEE5H7bFkA4RuX6Bu-uk1CdoxdsP5j14zQdLE15gN5Lgok5xv9KBo16lR=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNvNUT8RAWZy79Bl8CbDkvSyzgGkkyowxOeHIm0k17WlO08pqZTL2iK09ZdF7tvL--IK-6yRwhu42VhuxjBjr4gu1Ii1bsP2nT9cl38n1eRQUn4w3PC=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczO27XTCEe8SpmK8sFQVcuRTpuZBvxsIcc8n5BR1DfKgmkRH0q9iaiaoaqBjoMrneLvMx1K_MkldcDAEFb_PhrIR3wTJ3FNqaMviK75d8Qo0aizPpm2X=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNA9V9W-G3JqipTEVPNAZWXTlH9CdMucVsWKkIHibYRW7Kndn59XbF5n6NY6_tZ2g7zyHK5_seCWOTHd7U1Uo2R_efaU7VNPnNsi-vhSG0-iTh5kUlJ=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczM4iRST4YOUv2xBslEQRUCG0M1ZmipF9-OMIXB-i5cHNrCi1Tj9WU3OeGH1dP6oZVkdF7RUNNupE-Z3IfJdxAn8R-aL9dlyjmu-Qbj64_MctIpXx-2k=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPzsfCM_sN4kvNbf-oDQ3fBBCmZy_nHNzM4DB5HSTuyc5_i8Hft0tdI29662futZDcsJSeSRsD1ErSSF2nPTah55nmwxqS11uap9RcpEaf2XF9U_aqf=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNmD0OaEusWjYSasj-akYK2AyPzW4aMcyjv2s6ctno1UxPVvdkJwDlRL2KpOK07KDV3OKHwYyocmuNurI0sbWxEBidmHZUnM3oUk3sbr8GUgVOSs-gU=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPmF2HUvqT7CIrExYGLLMX16A-cNgz8QsdoH20apAmo5ZvaHulUj-QUstbg2EXXRcxI2IaDei4BicRm7Nt0tl9OUdI_Tl2S3mkZQYSr9AgQxn9lF-6i=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMBGFlSWUr07JlpNf5DrDH-VFMJMsZMOaKaSRFsfcLr1rsq8JXPpUD-lI4Ung3gmy_HaUhN3UEqz2bSz-LSRHKK0M57pc_ux9rS4h8r9nl51yYB93Kw=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPh8zMI4rQfxXVEurwxl5HiDB1eztkswdV42BAp0mlVjkIBU2XVEI8YpbmLj7mvm-NKZeEdjNcd6YPJu-QP2bUM-LYUwWGvNBHxoa3rYy175XSJlu7s=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPRCWcrvX0dtt0sMsSC7N5ejzA_sEmuAAo_nrR6u4GopzvJ-eD29jROWPatzrJcOIQsDeJ2Yn8scoiTQQZmHsf-NMqNneZ6icVs0TXosKJzJU547UgC=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNENTsqWeC0RaFzhk8HmmsthXm6rFRfJtz4oESCd-C8Pj-S34xbgGyWQvuHSMungSoqAAdFlVQuQCVKVPpckUKx04xGvffci5-K73IqttOEwtmA43Cj=w1920-h1080" alt="Foto 4">
+        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_4&confirm=t" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPuy1t8TUB0MQBYfr73Kn6l_JLk7f1wT7MiPSPwJh0YaJCGxlSqjTCjtp5DngW8Ux-IulfPDnRwhd0PP4SnVlqCNjLDNrwp61CfQh2LJ-GcBVC9wDPl=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPZT4S2bKrGtwwemx3hvXKlhpBfd5bIAoJVUCNq2eLxmNKXnotDvnpXgvU6iJgb2snDX8UFWz9PYTgJ-CnbJdfLTAUBPGtlPAu2teJuPshD10qhSeo1=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMxeGYNIe8_RacZLflmhdUpZnqXMfEXzdbjCAZP0QAXZ8-wGFQECGiWdkmkA5XwD_GrcQ1OpjukD5BfstUqrFc6YuRATzCoI6yxXZHLw0POaeRARPHp=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczP35HAg8S5Gmy2K0w-KqjiodWRf3IP5WXPdvJnztYMdRVCB6MmTm9wxdj-E80_EIBTym4jFusbZAtlGvjd1mzltKkLWaPhhotekM_4jMQrmQM-YVDtx=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNzKVtJSlqcCttGN-3YPB-cCtCFUOnsMwtth-iBDbSLFtTQlMY3Ll-QVY-xk74UUXSan5i968HgENxo-Seu1YM9xAar7uO56zgOvzVsflnsFIF7gspe=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMSTQETnrGS1m5AyvPRguaAffbpzTRSaE9YlhyzqChkOjiRcJfiAU2Tb6g0P_ZzS9T0v-gJEZ5TWekJ2qWkiYqSeYmnq8X4ZTvkFi68lH06WgI2Nhsk=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMu-xdw_XyH7XtvcmLmv9eliYksWKzayYp7B0bJT_kgy1yzBsSdUfuud5Ewl77wWpvv5dTDol4yavofhUGp_V3XEhGJs6PWwbmFzM5C0k_9Fu4AVIlP=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOJBJ_WLOiBmYmh6N7FGXQhN-BmP3JegGYBWSA9jNh4ch_SDDuUOBVbDj2_8p_uiZityxKJl7oDc14q_FuaQufkUccsYsbohs0ayO1ZX5FL-v_mwGhC=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPGvXIPz76wVlaSfVl_VgtQAavfGcxlTctltrGqo9m3_iXJ12etYmsZxkfrsPefsyHU7ERQRhBSELD2P6wWXom_snB_7z28G11iStXy1QbkFrO7kPpP=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPnJGE2OXSTHUuRlX9Zr6bT67-SC59tThz-Lj46ZXUE5SlFSnI1ASbgLn6QaLL9QlbqQFAbQJTibjoeH4kXtPkt7_XSN4x6J7cAUBCGceYFr-yoiswh=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPnlr0YZOT8TvN8RoKqw1gtwCfRCIw1xZcRIaTNUOpS-Gur5KqJq6ntoWBifiknHTjf3tu27sB0vBJnagAXvogBG19uwoYp178SsLJfQsD3aSfnsqX0=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOxA5vgNLUbSRIR1AQHwHABAVhJl16FCYrLYH27NGzktJxw4LtPkcKgSob_D2SHSeu-WA8OsN9OGgqdhFl7DsikgVu6v96ybGfZr221TCCqLFaDilBx=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMbM6HW1hRxcnkbwMHhV5kugaVSHcMIjyzgw1DWMCjkVMCl_J8yQXWEnPkfGNU3x7TFjtNQY1LNIed_UokysmraSgUO1VAbhyMK12KHeaXHwTWOYv3e=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczM2tUb4jx54mADyaQmrddvVpL0pd2FtEJ4acBqeKjYENaQtEX1ldZ_y4uabYvt7lDJVmZ_y6SIhnVYhcYZ8jGfpyr00hP_FsHFjcSKPK1wtL-jsbomk=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczP-Qwmf_6MaTviOf65rSxFRxqNF6JGvld0KoMsDEZyPHdHnFlhKywojDdLyYxHGy7AYU3fV-OKjwDWYD7Ozc5v0A7PTQaOUG5Y3ppZ7o6lqZNybhBr7=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczN9NZ-RUhmSPHCtDWuoJiG0e9VBmd67Q35KxRl1UFNDLRkKNQLQocL0Pdea-kUfJtfIHz5xc5rj_BvDNQlBtmh3c-NQcKVjVCErXfx6dScSQUoyleKz=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNBks-CV_DPJkCkhz07COhbHa4Om5OYV5EHvEzX9T7IPHoD4Ua9cn8kNBlbB2i46o81V3LDo06aC-hLHaKVHrg4i54Ophpxo9pNJTwBnqhAbM_FkA96=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMinAKcsbOYagoEuhsAPtlwgdb67GI0yDqYCwnNvN-l4OTasX5t8CzHPhRFg_j2GSiuaouIOR4TOjuvv8bW4bVYzTG_BF9_ndCENNofIjgTZZWKsizd=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMDpv9op0y2INqN6hIoxSWkJAzxe0otPo4iBovObXSDkUwdoS5XatZjS0ul_GtvwZWTVZlJR6iHFAhyLGdxSsdjH1eMQQbuaA2mvaJ7ivxa0TqWtfmo=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNMQJGffpbCkGIBPaXI4qDpvWMPVMoO1FegOqUxdKQ_Zs7quxSKkQszIhAHJ6GQxfDhliH_4b-BhtOJJvAKzkqZsDqUjsN0oPrj5VBTt49NBe1lrWhq=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMk0ag0-VZGt2bflw8--tY0Za_68lgkA5aZ9YtR6RlUjb1s29AbMxdLYacmTPydEJjjBuDqfhQitmqT1er6pTIIpR3Jf7NkTT-TKUYClMN7g8_C2BZU=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczO3UNv0yRhkrhPgD6sVmVLwXS4awSqiA3wUuEkF0voP5m8YFsNK7GUnwlBlh9fma3M2nPbVqhQSIxkqGaXdaDqLzWfoACAvGHiTjrPWe0rCS_RiFjVB=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOY-YX6_UfTWYL3padqu-x395F-TfzlWeKTOAAiMQuNHWkIFjGZWgZAmzRQncDr0R83RwcxiTN9ao6TFnzlQWtQ3ZbNUJlAFR642V0gs0SYf7NgL4q2=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMASEM-1L1SNcdZRlDttU-68QSvZNDPC2Wm9s9AhX7aVB4PkNNoMyRbUbm82ZQksteeqHH26TimBSbcauGdgEW9DDdMPMNGXwQqZZ5W5MGL7g2XmZg1=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMli0nZeERloizOstCQy5ZFw7HFh2u6sBANchBqQ8ZofHN__CU_cFUSHYR0LKJSjEoy-PhQs-JrGLPO3cYZWKMZcY1-yBIqUQRApOAAVe7OfkrDvKOp=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczO3p80xJoj4Uv_cPMZ85RVqMPxM37EOebH1xYZKR2sJFSEXjhYzVUgqxGdp_UOfy2k4_nzOv-jn8gw3bTsbb0AKAXCfJckF3rBjrFin4MNJUbk1Qx7P=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPWSI1cE1m-CURKMqq6tUKC7QZGOSBmoXe5gbxGC9FrJitBIj5mRsg8SXTr-hvO3s7iiOOZIzYLLPP0aelguq3FVsrEPZw9owFas8a4qQuAGG4mqC_v=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNprfPk1loEbs9Ivin8uXRHWsKmGZwvg9Ml8G_iIPDkHgk6auMFQ-1atqqRwLsAZWzjDlVuwk2DVtZrfve8ZcNqxj0rnSov3JvmoCCSozeJQTFZGGdF=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOtZtti8Rt4k1alSmER2WUQRJeVeixk-d-ENlhCNuL70XiGcoKwF8JmEwUb7GXifsGdw-ILfAUoD8kJI-kV0qjL4XRLBJQvaKIb6YBtItwB81aI6jl3=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczP7LOfcFPHaPiN3Zr4LKcORVv0zNW0ACWUt029_BRcTOy7dgOdW-olhGzabiX3NZ6sVJVYz-HYu9g5Nq27iRwgNhp0RWgxvTBXt2E59p3p-tB6abHJl=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNsKmeuRQxy8c4Q_a7oklWn2XIvUcSwAW0wXMu7RrrsqBBfnliG7XAn0SO08aSwCX5ZfEgGvrTlB2E0KufdaETlsduh08Fdq92mq3ffhQV4JEBZVDBY=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOl4uhh7SOzA53RDIebwhRRCxvPEcxX7mPatU_Cjv-u_WKeek1x8Vb_dCyTfbeIogfvOIxzzbdBLPHYf8SKhIhxBGF1_BXiX8xuGUg7qMZ6wfDlCZfj=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczN_Z9NOnV0ZENpYfRyjnLjBXXn8c2e5s7fS4v40qDBd8J12-R_YRew-aCB3YMH10Kb2flae_wOguko9W6krQuLsQtmwFrUXKg2UsbpnMie6NcYFXB8H=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczO9Xh98ykRyLX5InmnimmXdqjHW9blaMH2TnZZJR7IpZP5rF2MvrxYZAqJu60DtnMILoVJ3TWHHttY2Zfob3ReJv4YaEqzHnwipnbqBRWccr3le6Vkr=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPz5MBtJ_8ahEJ-bsNc6C4-XCj5OtHkNa9xvOIwkfjq1TcabFiSTGwE7l40GJUpYyk-aVneIuFM-PvV2K6o_k83AG7-vLkcnuaEQ3SQMVsA3dXarcZB=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNwzex2IHWb_vN-s8dfWV6NwAhKEA5BWaETe-W7dFrEhKJ8BlSn6fifS9U5jdnSi2kqnwNk31YO9873T1tm0gjRGRMNDfrYp-nCtq3emrN-OnYMMrV-=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczP6eA5YdO5lABe64eHtTFMGMTpllFCHPCBt75lZ3R5EiiuFwfImIzr-3MHj8m5FEb7BrZAhftkxAU3OPrX9pZaSjdtT8gxQmvTEcSDotsPPXlOGb_e0=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczM0KyfTLzhs8AT5UmCqQfkBY3S40FA9x-j-HC5aqFUh8VQdrJe6nVoKEX6QegPrFEtlOgYezKNlM62gcO3w332srYXizKDKD3F3b3IAM-Rxciu9UVdF=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPEH8zK0IKASUmJyoVksNdhR0Ixsy0mA2NlSaZFl5X0e1xQwTKHCAa37qSZi8hRLC-V3MPW34AO2X8aV-JWJc_DwtEytm5jns4jDSSKFjPPNqKMtSFm=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPUeu9Ge_uHvSPLXizPcjHIgl72jnv01XmcOgeDw_1QlNSKqLhCs4qtRA1KEq1RDhesxLupCCt924W4CF1I86hCHyDAi3HyVvSJ7upizws1Ra5qQmIH=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOyq4hn9iLMfv0agDK6O1ARxyfSB4XIyf6ApC13gwP7rh8mOwtJLIqllAJq2SEIk6rIc3fvNl1HxhHYLqLrOS4vtOBFbpV8RNcDunPDL9Nd3qZRoDMF=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMkKTXZo2xwy7-VZG5v2cv1vavAV4FFNDpryfqQEk1Lp7inliZjf1-zInp_hPsINkp8LBdlWDe7rzeyxR-XbBJBeho17dyrFoDe9K8mNY8Q9GVoaUGR=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMMKDeHJCj8-A37II6TtMgd-hkIwURzUfNcmIkBlkYpCEWyXvdfGh-DuRRsf9fsjnpaETp3QRt4UtPJ1pHJLcPoTQARvI2zlCi0XRZc-RbQdMhv4qRk=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczN5dzwHDosggpm45moWmYOicccBXIKMHkepq4y_eJpgR0082tkt5kTACGuM3M-SRdNmighrc8TwcJkrtmVyxkSKIIJoT_2Y1pN17qTjuePGOemUwpCi=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNgIzU80WVncnxDVj5dcrsPUSbXfL57ah800tLq_P3cMSSnwPnUxg0Md_gfSDusbnbV96NyzoavL5SQSRhG4GVI2qwK4dlfJqK72M8yV4PaNM1PERYY=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMI0xSLC_cIt2dBzuAtOeav4sv8lJhsnIwxO2P-nIC3ZZekqhVDa5HXwA2piTsdQXZO10pCKOrTHiUG1uFucT7lDPrpoAGFP76r1S_tpX9R4gHGngXG=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNw3RHd6xQaKetkLApf5k4gGtIpxIHdEeBzhDsA6FrgaCI7Ghvty79aVUNpiQ43AL4x_PvzObFO-96pyTkZ1DG8exOxK_gzYcu3T8n6pa4PztgILWE6=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPDUUIEF_Mzao_6ECuqAGO_6fhk6EdylUX_uY15cpmv4SyUox7mBbSTEWXZLwg8nE5FInX4OXSY8kzQhS3p_V_3Yf2RnzFPHjVgr_1EPo_i-U3BTbLM=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMCkDRaFVBaUQUr898ZvMoCeiaaqekOyLDeZBRQlhKTsDuS8o1Oyj0zdeT2qrwAW-1xesqut6Nmtkjg9xJRhPvUkX_XrAgheO-qhNU3dWARu1woPZZ5=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczM5SHYh5k9xiYSqz73VIJxyQ6AILa2gBHpBF5j_X2BSwtgoKV1K1LSSsg6rDK_VWT6GgZ0oM1YcVpm8-3POHpAQcOstkyocllYzjZEZbx9Hw-a2vCG2=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOvRNwqrqS_Xgq6VDf6xuQj189xq370ANMnxUHZCdL64DLjtGRmgUoUtdvYsMMTat7MPh2KqcLLPd_rgkh4xnkH-a7jJPYNizFQfXbgBiwNNfBUCi-W=w1920-h1080" alt="Foto 4">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPfliCJLiDxHikdI1YzM-NcMGKHlRyQchRVOSshYtzCDQ_C-B8z0SxX7jb_TtxfeMVQPfb_c3HWgJn34txKVAxQm-hVt6lSC7ks93pWYopTsAlWAcSI=w1920-h1080" alt="Foto 4">
+   
